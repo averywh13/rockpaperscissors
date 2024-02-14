@@ -2,3 +2,11 @@
 text-align: center;
 font-size: 5rem;
 }
+body{
+    background-image: url('imgs/wallpapergravityfalls.gif');
+    color: white;
+}
+.btn{
+    border: solid 5px white;
+    width: 50%;
+}
