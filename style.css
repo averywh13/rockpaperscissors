@@ -5,8 +5,21 @@ font-size: 5rem;
 body{
     background-image: url('imgs/wallpapergravityfalls.gif');
     color: white;
+    background-repeat: no-repeat;
+    background-position: fixed;
 }
 .btn{
-    border: solid 5px white;
-    width: 50%;
+    padding: 0%;
+}
+.buttonimg1{
+    width: 40%;
+}
+.buttonimg2{
+    width: 35%;
+}
+.buttonimg3{
+    width: 30%;
+}
+.row1{
+    margin-left: 200px;
 }
