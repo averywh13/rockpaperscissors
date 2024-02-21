@@ -6,20 +6,25 @@ body{
     background-image: url('imgs/wallpapergravityfalls.gif');
     color: white;
     background-repeat: no-repeat;
-    background-position: fixed;
+    background-position: center;
+    background-size: cover;
+    background-attachment: fixed;
 }
 .btn{
     padding: 0%;
 }
 .buttonimg1{
-    width: 40%;
+    border: 5px solid white;
 }
 .buttonimg2{
-    width: 35%;
+    border: 5px solid white;
 }
 .buttonimg3{
-    width: 30%;
+    border: 5px solid white;
 }
-.row1{
-    margin-left: 200px;
+.ttleimg{
+    width: 50%;
+}
+.outcome{
+    text-align: center;
 }
