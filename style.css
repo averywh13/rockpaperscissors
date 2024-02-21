@@ -9,7 +9,8 @@ body{
     background-position: center;
     background-size: cover;
     background-attachment: fixed;
-}
+      }
+
 .btn{
     padding: 0%;
 }
@@ -22,9 +23,19 @@ body{
 .buttonimg3{
     border: 5px solid white;
 }
-.ttleimg{
+.titleimg{
     width: 50%;
 }
 .outcome{
     text-align: center;
+    margin-right: 40px;
+}
+
+.holder1{
+    margin-top: 100px;
+
+}
+
+.score1 {
+    justify-content: center;
 }
