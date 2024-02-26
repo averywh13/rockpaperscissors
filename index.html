@@ -22,14 +22,18 @@
 <!-- character cards -->
 <div class="container container-fluid">
 <div class="row score1">
+
     <div class="col-sm-5 col-5 text-center">
-      <h1>Player 1:</h1>
-      <img class="titleimg" src="https://picsum.photos/200">
+      <h1 id="username">Player 1:</h1>
+      <p id="playName"></p>
+      <img id="rockimg" class="titleimg" src="https://picsum.photos/200">
     </div>
+
     <div class="col-sm-5 col-5 text-center">
       <h1>Computer:</h1>
       <img class="titleimg" src="https://picsum.photos/200">
     </div>
+    
   </div>
   </div>
 <!-- character cards -->
@@ -42,14 +46,17 @@
 <!-- character images -->
 <div class="container holder1">
     <div class="row justify-content-center">
-        <div class="col-4 col-lg-3 text-center">
-            <img class=" img-fluid buttonimg1 btn" src="imgs/dipper.webp">
+
+        <div id="rock" class="col-4 col-lg-3 text-center">
+            <img onclick="rock()"  class=" img-fluid buttonimg1 btn" src="imgs/dipper.webp">
         </div>
-        <div class="col-4 col-lg-3 text-center">
-            <img class="img-fluid buttonimg2 btn" src="imgs/newstanford.webp">
+
+        <div id="paper" class="col-4 col-lg-3 text-center">
+            <img onclick="paper()" class="img-fluid buttonimg2 btn" src="imgs/newstanford.webp">
         </div>
-        <div class="col-4 col-lg-3 text-center">
-            <img class="img-fluid buttonimg3 btn" src="imgs/newbill.webp">
+
+        <div id="scissors" class="col-4 col-lg-3 text-center">
+            <img onclick="scissors()" class="img-fluid buttonimg3 btn" src="imgs/newbill.webp">
         </div>
 </div>
 <!-- character images -->
