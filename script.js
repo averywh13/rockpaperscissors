@@ -67,11 +67,10 @@ function getCompChoice() {
 
 
 
-//1 of 3 image generates for the computer's choice
-
-
 function playGame(userChoice, compChoice) {
-
+  if (userChoice === compChoice) {
+    return 'This game is a tie!';
+  }
 
 
 
