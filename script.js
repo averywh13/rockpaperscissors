@@ -1,23 +1,79 @@
+let userChoice
+let compChoice
+
+let userScore
+let compScore
+
+
+
+
+
 Window.onload = changeUsername();
+
 
 function changeUsername(element) {
   var username = prompt("Enter your username:"); // Asks for your username
   document.getElementById("username").innerHTML = username + ':'; // Displays Username
 }
+
 //when user clicks their character image --> character cards will change
 function rock() {
-  document.getElementById('rockimg').src = "imgs/dipper.webp";
-  console.log(rock());
+  //get USer choice
+  userChoice = 'rock'
+  //display user choice
+  document.getElementById('userImg').src = `imgs/${userChoice}.webp`;
+  // get comp choice
+  compChoice = getCompChoice();
+  //display comp choice
+  document.getElementById('compImg').src = `imgs/${compChoice}.webp`;
+  //evaluate winners/losers
+  playGame(userChoice, compChoice)
 }
 
 function paper() {
-  document.getElementById('rockimg').src = "imgs/newstanford.webp";
-  console.log(paper());
+  userChoice = 'paper'
+
+  document.getElementById('userImg').src = `imgs/${userChoice}.webp`;
+  compChoice = getCompChoice();
+  document.getElementById('compImg').src = `imgs/${compChoice}.webp`;
+
+  playGame(userChoice, compChoice)
 }
 
 function scissors() {
-  document.getElementById('rockimg').src = "imgs/newbill.webp";
-  console.log(scissors());
+  userChoice = 'scissors'
+
+  document.getElementById('userImg').src = `imgs/${userChoice}.webp`;
+  compChoice = getCompChoice();
+  document.getElementById('compImg').src = `imgs/${compChoice}.webp`;
+  playGame(userChoice, compChoice)
 }
 // ^^^^
 
+
+//function to randomly generate Comp Choice
+function getCompChoice() {
+  const randomNumber = Math.floor(Math.random() * 3)
+  if (randomNumber === 0) {
+    return'rock'
+  } else if (randomNumber === 1) {
+    return 'paper'
+  }
+  else {
+    return 'scissors'
+  }
+
+}
+
+
+
+//1 of 3 image generates for the computer's choice
+
+
+function playGame(userChoice, compChoice) {
+
+
+
+
+
+}

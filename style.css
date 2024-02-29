@@ -25,6 +25,7 @@ body{
 }
 .titleimg{
     width: 50%;
+    border: 5px solid white;
 }
 .outcome{
     text-align: center;
