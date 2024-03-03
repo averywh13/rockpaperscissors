@@ -54,26 +54,41 @@
         <div id="scissors" class="col-4 col-lg-3 text-center">
             <img onclick="scissors()" class="img-fluid buttonimg3 btn" src="imgs/scissors.webp">
         </div>
+    </div>
 </div>
 <!-- character images -->
 
-<!--point tracking-->
+<!-- outcome -->
 <div id="outcome">
     <!-- Result will be displayed here -->
 </div>
-<div id="game-info">
-    <div id="round">Round: 1 of 5</div>
-    <div id="scoreboard">
-        <div id="user-score">Player Score: 0</div>
-        <div id="comp-score">Computer Score: 0</div>
-    </div>
+<!-- outcome -->
+
+<!-- round tracking -->
+<div class="container my-5">
+<div class="text-center my-5">
+  <h1  class="roundd" id="tryMe">Round <span id="roundNum">1</span>:</h1>
 </div>
-<!--point tracking-->
+</div>
+<!-- round tracking -->
+
+<!-- comp and player's score -->
+<div class="container-fluid justify-content-center">
+    <h1 class="text-center">Computer's Score:<br> <span id="compScore">0</span></h1>
+  </div>
+  <div class="container-fluid justify-content-center">
+    <h1 class="text-center">Player's Score:<br> <span id="userScore">0</span></h1>
+  </div>
+<!-- comp and player's score -->
+
+<!-- reset button -->
+<div class="reset-button-div col-4 text-center">
+    <button class="reset" onclick="resetGame()" >Reset Button</button>
+  </div>
+<!-- reset button -->
 
 
-<!--reset button-->
-<button onclick="reset()">Reset</button>
-<!--reset button-->
+
 
 
 

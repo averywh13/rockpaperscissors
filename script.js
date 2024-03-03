@@ -1,8 +1,9 @@
 let userChoice;
 let compChoice;
-
 let userScore = 0;
-let compScore= 0;
+let compScore = 0;
+let roundNum = 1;
+
 
 //prompt to ask username
 Window.onload = changeUsername();
@@ -74,47 +75,39 @@ function getCompChoice() {
 
 
 
-//outcome of characters
+
 function playGame(userChoice, compChoice) {
   if (userChoice === compChoice) {
-    outcome.textContent = "Its a tie!";
-  } else if (
-    (userChoice === "rock" && compChoice === "scissors") ||
-    (userChoice === "scissors" && compChoice === "paper") ||
-    (userChoice === "paper" && compChoice === "rock")
-  ) {
-    outcome.textContent = `You win! Computer chose ${compChoice}.`;
+    outcome.textContent = "It's a tie!";
+  } else if ((userChoice === 'rock' && compChoice === 'scissors') ||
+    (userChoice === 'paper' && compChoice === 'rock') ||
+    (userChoice === 'scissors' && compChoice === 'paper')) {
+    outcome.textContent = "You win!";
+    userScore++;
+    roundNum++;
   } else {
-    outcome.textContent = `You lose! Computer chose ${compChoice}.`;
+    outcome.textContent = "Computer wins!";
+    compScore++;
+    roundNum++;
+  }
+  document.getElementById('compScore').innerText = `${compScore}`;
+  document.getElementById('userScore').innerText = `${userScore}`;
+  document.getElementById('roundNum').innerText = `${roundNum}`;
+
+  if (roundNum >= 5) {
+    document.getElementById('tryMe').innerText = 'Game over!';
+  }
+  if (userScore > compScore) {
+    outcome.textContent = "Congratulations! You won the game!";
+  } else if (userScore < compScore) {
+    outcome.textContent = "Sorry! You lost the Game"
   }
 }
-
-
-
-
-
-
-//scoreboard
-function playRound(userChoice) {
-if (  (userChoice === 'rock' && compChoice === 'scissors') ||
-      (userChoice === 'paper' && compChoice === 'rock') ||
-      (userChoice === 'scissors' && compChoice === 'paper') ){
-      outcomeDisplay.textContent = 'You win! Computer chose ${compChoice}.' ;
-      userScore++; // if player wins, point system will increase by one
-    } else {
-      outcomeDisplay.textContent = 'You lose! Computer chose ${compChoice}.';
-      compScore++; // if computer wins, point system will increase by one
+  function resetGame() {
+    userScore = 0;
+    compScore = 0;
+    roundNum = 1;
+    document.getElementById('userScore').innerText = '0';
+    document.getElementById('compScore').innerText = '0';
+    document.getElementById('tryMe').innerHTML = `Round <span id="roundNum">1</span>:`;
   }
-
-  userScoreDisplay.textContent = `Player Score: ${userScore}`; //display points for player
-  compScoreDisplay.textContent = `Computer Score: ${compScore}`;b //display points for computer
-}
-
-
-//reset button
-function reset(){
-  document.getElementById("userScore").innerHTML = 0;
-  document.getElementById("compScore").innerHTML = 0;
-}
-//when button is clicked, it will automatically set both computer and player's points to zero
-
