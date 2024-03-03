@@ -82,11 +82,11 @@ function playGame(userChoice, compChoice) {
   } else if ((userChoice === 'rock' && compChoice === 'scissors') ||
     (userChoice === 'paper' && compChoice === 'rock') ||
     (userChoice === 'scissors' && compChoice === 'paper')) {
-    outcome.textContent = "You win!";
+    outcome.textContent = "You win!" + ${compChoice};
     userScore++;
     roundNum++;
   } else {
-    outcome.textContent = "Computer wins!";
+    outcome.textContent = "You lose!";
     compScore++;
     roundNum++;
   }
@@ -94,13 +94,14 @@ function playGame(userChoice, compChoice) {
   document.getElementById('userScore').innerText = `${userScore}`;
   document.getElementById('roundNum').innerText = `${roundNum}`;
 
-  if (roundNum >= 5) {
+
+// when the round number is greater than 5 and the user's score is greater than the computer's, you will win the game
+  if ((roundNum >= 5)(userScore > compScore)) {
     document.getElementById('tryMe').innerText = 'Game over!';
-  }
-  if (userScore > compScore) {
     outcome.textContent = "Congratulations! You won the game!";
-  } else if (userScore < compScore) {
-    outcome.textContent = "Sorry! You lost the Game"
+  } else if ((roundNum >= 5)(userScore < compScore)) {
+    document.getElementById('tryMe').innerText = 'Game over!';
+    outcome.textContent = "Sorry! You have lost the game!";
   }
 }
   function resetGame() {
@@ -110,4 +111,5 @@ function playGame(userChoice, compChoice) {
     document.getElementById('userScore').innerText = '0';
     document.getElementById('compScore').innerText = '0';
     document.getElementById('tryMe').innerHTML = `Round <span id="roundNum">1</span>:`;
+    document.getElementById('outcome').innerHTML = 'd-none';
   }
