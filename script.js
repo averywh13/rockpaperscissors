@@ -136,4 +136,6 @@ function resetGame() {
   document.getElementById('compScore').innerText = '0';
   document.getElementById('tryMe').innerHTML = `Round <span id="roundNum">1</span>:`;
   document.getElementById('outcome').innerHTML = `Who Will Win?`;
+  document.getElementById('userImg').src = 'imgs/fillerimgg.png';
+  document.getElementById('compImg').src = 'imgs/fillerimgg.png';
 }
