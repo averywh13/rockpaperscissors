@@ -16,9 +16,9 @@ function changeUsername(element) {
 
 
 //when user clicks their character image --> character cards will change
-function rock() {
+function dipper() {
   //get USer choice
-  userChoice = "rock";
+  userChoice = "Dipper Pines";
   //display user choice
   document.getElementById("userImg").src = `imgs/${userChoice}.webp`;
   // get comp choice
@@ -29,9 +29,9 @@ function rock() {
   playGame(userChoice, compChoice);
 }
 
-function paper() {
+function stan() {
   //get user choice
-  userChoice = "paper";
+  userChoice = "Stanford Pines";
   //display user choice
   document.getElementById("userImg").src = `imgs/${userChoice}.webp`;
   //get comp choice
@@ -42,9 +42,9 @@ function paper() {
   playGame(userChoice, compChoice);
 }
 
-function scissors() {
+function bill() {
   //get user choice
-  userChoice = "scissors";
+  userChoice = "Bill Cipher";
   //display user choice
   document.getElementById("userImg").src = `imgs/${userChoice}.webp`;
   //get comp choice
@@ -64,13 +64,14 @@ function scissors() {
 function getCompChoice() {
   const randomNumber = Math.floor(Math.random() * 3);
   if (randomNumber === 0) {
-    return "rock";
+    return "Dipper Pines";
   } else if (randomNumber === 1) {
-    return "paper";
+    return "Stanford Pines";
   } else {
-    return "scissors";
+    return "Bill Cipher";
   }
 }
+
 
 
 
@@ -79,37 +80,60 @@ function getCompChoice() {
 function playGame(userChoice, compChoice) {
   if (userChoice === compChoice) {
     outcome.textContent = "It's a tie!";
-  } else if ((userChoice === 'rock' && compChoice === 'scissors') ||
-    (userChoice === 'paper' && compChoice === 'rock') ||
-    (userChoice === 'scissors' && compChoice === 'paper')) {
-    outcome.textContent = "You win!" + ${compChoice};
+    //when both comp and player have the same choice, print it is a tie
+  } else if ((userChoice === 'Dipper Pines' && compChoice === 'Bill Cipher') ||
+    (userChoice === 'Stanford Pines' && compChoice === 'Dipper Pines') ||
+    (userChoice === 'Bill Cipher' && compChoice === 'Stanford Pines')) {
+    outcome.textContent = "You win! Computer chose " + compChoice + "!";
     userScore++;
     roundNum++;
+    //otherwise, player wins and adds a point to both round and score
   } else {
-    outcome.textContent = "You lose!";
+    outcome.textContent = "You lose! Computer chose " + compChoice + "!";
     compScore++;
     roundNum++;
   }
+  //if something different, computer wins and adds to computer score and round
   document.getElementById('compScore').innerText = `${compScore}`;
   document.getElementById('userScore').innerText = `${userScore}`;
   document.getElementById('roundNum').innerText = `${roundNum}`;
+  //print user and computer score and the round number as it changes
 
 
-// when the round number is greater than 5 and the user's score is greater than the computer's, you will win the game
-  if ((roundNum >= 5)(userScore > compScore)) {
-    document.getElementById('tryMe').innerText = 'Game over!';
-    outcome.textContent = "Congratulations! You won the game!";
-  } else if ((roundNum >= 5)(userScore < compScore)) {
-    document.getElementById('tryMe').innerText = 'Game over!';
-    outcome.textContent = "Sorry! You have lost the game!";
+  // array for messages of winning the game
+  const winMessages = [
+    "Congratulations! You won the game!",
+    "Well done! You emerged victorious!",
+    "Victory is yours! Great job!"
+  ];
+
+  // array for messages of losing the game
+  const loseMessages = [
+    "Oh no! You lost the game!",
+    "Better luck next time! You lost!",
+    "Don't worry, losing is part of the game. Try again!"
+  ];
+
+  if ((roundNum >= 5) && (userScore > compScore)) {
+    document.getElementById('tryMe').innerText = 'Game Over!';
+    // randomly select a message from the winMessages array
+    const randomIndex = Math.floor(Math.random() * winMessages.length);
+    outcome.textContent = winMessages[randomIndex];
+  } else if ((roundNum >= 5) && (userScore < compScore)) {
+    document.getElementById('tryMe').innerText = 'Game Over!';
+    // randomly select a message from the loseMessages array
+    const randomIndex = Math.floor(Math.random() * loseMessages.length);
+    outcome.textContent = loseMessages[randomIndex];
   }
 }
-  function resetGame() {
-    userScore = 0;
-    compScore = 0;
-    roundNum = 1;
-    document.getElementById('userScore').innerText = '0';
-    document.getElementById('compScore').innerText = '0';
-    document.getElementById('tryMe').innerHTML = `Round <span id="roundNum">1</span>:`;
-    document.getElementById('outcome').innerHTML = 'd-none';
-  }
+
+//when button is hit, it will set the round number back to 1, and the players/computers scores to 0
+function resetGame() {
+  userScore = 0;
+  compScore = 0;
+  roundNum = 1;
+  document.getElementById('userScore').innerText = '0';
+  document.getElementById('compScore').innerText = '0';
+  document.getElementById('tryMe').innerHTML = `Round <span id="roundNum">1</span>:`;
+  document.getElementById('outcome').innerHTML = `Who Will Win?`;
+}

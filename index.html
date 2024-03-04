@@ -13,6 +13,10 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Micro+5&display=swap" rel="stylesheet">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@400..700&display=swap" rel="stylesheet">
 </head>
 
 <body>
@@ -38,64 +42,59 @@
   </div>
 <!-- character cards -->
 
-
-<!-- character images -->
-<div class="container holder1">
-    <div class="row justify-content-center">
-
-        <div id="rock" class="col-4 col-lg-3 text-center">
-            <img onclick="rock()"  class=" img-fluid buttonimg1 btn" src="imgs/rock.webp">
-        </div>
-
-        <div id="paper" class="col-4 col-lg-3 text-center">
-            <img onclick="paper()" class="img-fluid buttonimg2 btn" src="imgs/paper.webp">
-        </div>
-
-        <div id="scissors" class="col-4 col-lg-3 text-center">
-            <img onclick="scissors()" class="img-fluid buttonimg3 btn" src="imgs/scissors.webp">
-        </div>
-    </div>
-</div>
-<!-- character images -->
-
 <!-- outcome -->
-<div id="outcome">
-    <!-- Result will be displayed here -->
+<div class="text-center outcome" id="outcome">
+    Who Will Win?
 </div>
 <!-- outcome -->
 
 <!-- round tracking -->
 <div class="container my-5">
-<div class="text-center my-5">
-  <h1  class="roundd" id="tryMe">Round <span id="roundNum">1</span>:</h1>
-</div>
-</div>
-<!-- round tracking -->
-
-<!-- comp and player's score -->
-<div class="container-fluid justify-content-center">
-    <h1 class="text-center">Computer's Score:<br> <span id="compScore">0</span></h1>
-  </div>
-  <div class="container-fluid justify-content-center">
-    <h1 class="text-center">Player's Score:<br> <span id="userScore">0</span></h1>
-  </div>
-<!-- comp and player's score -->
-
+    <div class="text-center my-5">
+      <h1  class="roundd" id="tryMe">Round <span id="roundNum">1</span>:</h1>
+    </div>
+    </div>
+    <!-- round tracking -->
+    
+    <!-- comp and player's score -->
+    <div class="container-fluid justify-content-center">
+        <h1 class="text-center score2">Computer's Score:<br> <span id="compScore">0</span></h1>
+      </div>
+      <div class="container-fluid justify-content-center">
+        <h1 class="text-center score3">Player's Score:<br> <span id="userScore">0</span></h1>
+      </div>
+    <!-- comp and player's score -->
 <!-- reset button -->
-<div class="reset-button-div col-4 text-center">
+<div class="reset-button-div text-center">
     <button class="reset" onclick="resetGame()" >Reset Button</button>
   </div>
 <!-- reset button -->
 
 
 
+<!-- character images -->
+<div class="container holder1">
+    <div class="row justify-content-center">
 
+        <div id="dipper" class="col-4 col-lg-3 text-center">
+            <img onclick="dipper()"  class=" img-fluid buttonimg1 btn" src="imgs/Dipper Pines.webp">
+        </div>
 
+        <div id="stan" class="col-4 col-lg-3 text-center">
+            <img onclick="stan()" class="img-fluid buttonimg2 btn" src="imgs/Stanford Pines.webp">
+        </div>
 
+        <div id="bill" class="col-4 col-lg-3 text-center">
+            <img onclick="bill()" class="img-fluid buttonimg3 btn" src="imgs/Bill Cipher.webp">
+        </div>
+    </div>
+</div>
+<!-- character images -->
 
-
-
-
+<!-- back to monthly button -->
+<div class="text-center ">
+    <a class="btn backto bg-success btn-outline-secondary text-white" href="https://averywh13.github.io/gallery/">Back To Gallery</a>
+<!-- back to monthly button -->
 
 
 
